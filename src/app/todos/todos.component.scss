@@ -1,6 +1,8 @@
 .list{
 
     padding: 50px var(--padding-side);
+    max-width: 1400px;
+    margin: 0 auto;
 
     .btn-container{
         display: flex;
