@@ -1,0 +1,169 @@
+.list{
+
+    padding: 50px var(--padding-side);
+
+    .btn-container{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0px;
+
+        button{
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        .search{
+            max-width: 100%;
+            input{
+                max-width: 100%;
+                padding: 5px 10px;
+                max-width: 100%;
+            }
+
+            button{
+                padding-left: 25px;
+                padding-right: 25px;
+                background-color: rgb(86, 168, 180);
+                
+                i{
+                    color: white;
+                }
+            }
+        }
+        
+        .addTodo{
+            button{
+                background-color: var(--color-blue);
+                color: white;
+            }
+        }
+
+
+
+    }
+
+    .table-container{
+        table{
+            width: 100%;
+            border-spacing: 0;
+            border: 1px solid black;
+            text-align: left;
+    
+            th, td {
+                border: 1px solid var(--color-grey2);
+            }
+    
+            
+    
+            th{
+                border: 0;
+                border-right: 1px solid black;
+                padding: 5px;
+                background-color: var(--color-grey);
+            }
+            .status-cell{
+                button{
+                    font-size: 16px;
+                    font-weight: bold;
+                    padding: 2px 5px;
+                    background-color: transparent;
+                    border: 1px solid transparent;
+                    
+    
+                    i{
+                        font-weight: bold;
+                    }
+                }
+                button:hover{
+                    background-color: white;
+                    border: 1px solid black;
+    
+                
+                }
+            }
+            td{
+                padding: 5px;
+            }
+            .todo-title{
+                cursor: pointer;
+    
+            }
+            .todo-title:hover{
+                background-color: black;
+                color: white;
+                opacity: 0.8;
+            }
+    
+    
+            // FIRST COL - NUMBER
+            th:first-of-type{
+                text-align: center;
+            }
+            td:first-of-type{
+                text-align: center;
+            }
+            // LAST COL - ACTION
+            th:last-of-type{
+                text-align: center;
+                border-right: 0;
+            }
+            td:last-of-type{
+                text-align: center;
+            }
+    
+            .action-cell{
+                .action-btns{
+    
+                    display: flex;
+                    justify-content: center;
+                    button {
+                        margin: 0px 5px;
+                        padding: 2px 5px;
+                        color: white;
+                    }
+                    .btn-done{
+                        background-color: rgb(17, 166, 17);
+                    }
+                    .btn-edit{
+                        background-color: rgb(75, 151, 183);
+                    }
+                    .btn-delete{
+                        background-color: var(--color-red);
+                    }
+                }
+            }
+    
+    
+        }
+
+    }
+
+    .app-info{
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .list{
+
+        .btn-container{
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin: 10px 0px;
+
+            .search{
+                margin-top: 5px;
+            }
+    
+        }
+
+        .table-container{
+            overflow: scroll;
+            overflow-y: hidden;
+        }
+    }
+  }

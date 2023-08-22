@@ -1,0 +1,53 @@
+<div class="list">
+    <div class="btn-container">
+        <div class="search">
+            <input type="text" placeholder="search">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="addTodo">
+            <button (click)="addTodo()">Add Todo</button>
+        </div>
+    </div>
+
+
+    <div class="table-container">
+
+        <table class="table">
+            <th>#</th>
+            <th>Title</th>
+            <th>Desc</th>
+            <th class="status-cell" (click)="filterByStatus()">
+                <button>Status <span><i class="fa-solid fa-chevron-down"></i></span></button>
+            </th>
+            <th class="action-cell">Action</th>
+    
+            <tr *ngFor="let todo of todoList; let i = index">
+                <td>{{i + 1}}</td>
+                <td class="todo-title" (click)="navigateToTodo(todo)">{{todo.title}}</td>
+                <td>{{todo.desc}}</td>
+                <td>{{todo.status}}</td>
+                <td class="action-cell">
+                    <div class="action-btns" *ngIf="todo.status === 'ToDo'">
+                        <button class="btn-done" (click)="FinishedTodo(todo)">Done</button>
+                        <button class="btn-edit" (click)="EditTodo(todo)">Edit</button>
+                        <button class="btn-delete" (click)="DeleteTodo(todo)">Delete</button>
+                        
+                    </div>
+                </td>
+            </tr>        
+        </table>
+
+    </div>
+
+
+        <div class="app-info">
+            <p>* click on the chosen todo title to redirect you to the todo page</p>
+            <p>* click "Status" in the table head to sort todos (sorts Done todos to the top)</p>
+        </div>
+        
+</div>
+
+<app-form [EditTodo]="TodoInEditing" [updatedTodos]="todoList" > </app-form>

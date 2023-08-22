@@ -1,0 +1,43 @@
+<div id="form-container" class="form-container">
+
+    <form id="editForm" class="form editForm" [formGroup]="todoFormEdit" (ngSubmit)="onSubmitEdit()">
+        <h3>Edit Todo</h3>
+        <div class="row">
+            <label for="newTitle">Title</label>
+            <input id="newTitle" type="text" formControlName="titleEdit">
+        </div>
+        <div class="row">
+            <label for="newDesc">Description</label>
+            <input id="newDesc" type="text" formControlName="descEdit">
+        </div>
+    
+        <div class="btns">
+            <button type="submit">Save</button>
+            <button type="button" (click)="closeForm()">Cancel</button>
+        </div>
+    </form>
+    
+    
+    <form id="addForm" class="form addForm" [formGroup]="todoFormAdd" (ngSubmit)="onSubmitAdd()">
+        <h3>Add Todo</h3>
+        <div class="row" >
+            <label for="newTitle">Title</label>
+            <input id="newTitle" type="text" formControlName="titleAdd" required >
+        </div>
+        <div class="row">
+            <label for="newDesc">Description</label>
+            <input id="newDesc" type="text" formControlName="descAdd" required >
+        </div>
+    
+        <div class="btns">
+            <button type="submit">Save</button>
+            <button type="button" (click)="closeForm()" >Cancel</button>
+        </div>
+    
+    </form>
+
+
+    
+</div>
+
+<div id="background" class="background"></div>

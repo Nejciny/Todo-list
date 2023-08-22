@@ -1,0 +1,21 @@
+.myTodo{
+    padding: 0 var(--padding-side);
+
+    max-width: 1000px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #F1F6F9;
+    box-shadow: 1px 5px 15px black;
+    margin: 10px auto;
+
+    h3{
+        font-weight: 600;
+    }
+
+    p{  
+        border-top: 1px solid black;
+        border-top: 1px solid black;
+        margin: 20px 0;
+        padding: 10px 0px;
+    }
+}
